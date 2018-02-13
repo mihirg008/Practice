@@ -8,7 +8,7 @@ body{margin:0;font-family: 'Varela Round', sans-serif; font-weight: bold;backgro
 .m1{ background: linear-gradient(rgba(95, 207, 128, 0.7),rgba(95, 207, 128, 0.8)),url(aa.jpg); ;height: 600px;width: 100%;}
 .s2{font-size: 15px;line-height: 25px}
 .s1{font-size: 45px;line-height: 55px}
-.signup{border: 4px solid #000;position: relative;margin-top: 5%;margin-left: 55%;float: left;}
+.signup{position: relative;margin-top: 5%;margin-left: 55%;float: left;}
 
 .ts{background: white;border-radius: 8px 8px 8px 8px}
 .ts1{text-align:center;color: white;background: #637a91;padding: 20px;border-radius: 8px 8px 0px 0px}
