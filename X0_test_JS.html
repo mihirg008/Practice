@@ -1,0 +1,98 @@
+<!doctype HTML>
+<html>
+<head>
+  <title>Basix X-0 Game</title>
+  <style type="text/css">
+    body{background:linear-gradient(to left,#36d1dc,#5b86e5)}
+    #container{
+      white-space: nowrap;
+      margin-top : 10%;
+      margin-left: 40%;
+      max-width: 300px;
+      border-style: solid;
+      border-radius: 10px
+    }
+    #p1{
+      font-size: 50px;
+      text-align: center;
+    }
+    .player{max-width: 90px;
+    margin-left: 40%}
+    input{max-width: 30px;text-align: center;}
+    ul li{display: inline;}
+  </style>
+  <script type="text/javascript">
+    var PL = 0;
+    var P1=0;
+    var P2=0;
+    function act(n){
+     var X = document.forms[0].elements[n];
+     var Y = document.forms[0].elements[0];
+      if (X.value == "" && PL == 0)
+      {X.value = "X";PL=1;Y.value="Player 0";}
+      else if (X.value == "" && PL == 1)
+      {X.value = "0";PL=0;Y.value="Player X";}
+      }
+
+    function check(){
+      B1=document.forms[0].elements[1];B4=document.forms[0].elements[7];B7=document.forms[0].elements[13];
+      B2=document.forms[0].elements[3];B5=document.forms[0].elements[9];B8=document.forms[0].elements[15];
+      B3=document.forms[0].elements[5];B6=document.forms[0].elements[11];B9=document.forms[0].elements[17];
+      if ((B1.value == "X" && B2.value== "X" && B3.value == "X") ||
+          (B1.value == "X" && B5.value =="X" && B9.value=="X") ||
+          (B1.value =="X" && B4.value =="X" && B7.value=="X") ||
+          (B2.value == "X" && B5.value=="X" &&  B8.value=="X") ||
+          (B3.value == "X" && B6.value=="X" && B9.value=="X") ||
+          (B3.value == "X" && B5.value=="X" && B7.value=="X") ||
+          (B4.value == "X" && B5.value=="X" && B6.value=="X") ||
+          (B7.value == "X" && B8.value=="X" && B9.value=="X"))
+          {P1 =1;P2=0;}
+      else if ((B1.value == "0" && B2.value== "0" && B3.value == "0") ||
+          (B1.value == "0" && B5.value =="0" && B9.value=="0") ||
+          (B1.value =="0" && B4.value =="0" && B7.value=="0") ||
+          (B2.value == "0" && B5.value=="0" &&  B8.value=="0") ||
+          (B3.value == "0" && B6.value=="0" && B9.value=="0") ||
+          (B3.value == "0" && B5.value=="0" && B7.value=="0") ||
+          (B4.value == "0" && B5.value=="0" && B6.value=="0") ||
+          (B7.value == "0" && B8.value=="0" && B9.value=="0"))
+          {P1 =0;P2=1;}
+      if(P1==1){alert('player1 wins');}
+      if(P2==1){alert('player2 wins');}
+    }
+
+    function resetAS(){
+      /*document.forms[0].elements[1].value = "";document.forms[0].elements[7].value = "";document.forms[0].elements[13].value = "";
+      document.forms[0].elements[3].value = "";document.forms[0].elements[9].value = "";document.forms[0].elements[15].value = "";
+      document.forms[0].elements[5].value = "";document.forms[0].elements[11].value = "";document.forms[0].elements[17].value = "";
+      window.PL = 0;window.P1 = 0;window.P2 = 0;*/
+      location.reload(true);
+    }
+
+</script>
+</head>
+<body>
+  <p id="p1">The Big'ol TIC-TAC-TOE</p>
+  <div id="container">
+  <form name ="panel"><br>
+    <input class="player" type="text" disabled="disabled" value="Player X">
+    <ul>
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(1);check();">
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(3);check();">
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(5);check();">
+    </ul>
+    <ul>
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(7);check();">
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(9);check();">
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(11);check();">
+    </ul>
+    <ul>
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(13);check();">
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(15);check();">
+    &emsp;<li><input type="text" disabled="disabled"> <input type="button" onclick="act(17);check();">
+    </ul>
+    <input class = "player" type="button" onclick="resetAS();" value = "RESET">
+
+    <br>
+  </div>
+</body>
+</html>
