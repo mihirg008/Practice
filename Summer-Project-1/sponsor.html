@@ -20,6 +20,10 @@
       .navbar-collapse{
        justify-content: flex-end;
       }
+      #nav-text:hover{
+        color: red;
+        transition: 1s ease;
+      }
       @media only screen and (max-width: 768px) {
         .navbar .navbar-collaps
         e {
@@ -38,7 +42,8 @@
       }
       #cont{
         padding-top: 0px;
-        margin-top: 50px;
+        margin-top: 0px;
+        background-color:#1e1c1c;
       }
       #contin{
         width: 300px;
@@ -54,13 +59,13 @@
           </button>
           <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link text-white" href="index.html">HOME </a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="blog.html">BLOG</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="team.html">TEAM</a></li>
-              <li class="nav-item active"><a class="nav-link text-white" href="cars.html">CARS</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="gallery.html">GALLERY</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="sponsor.html">SPONSORS</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="#cont">CONTACT US</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="index.html"><p id="nav-text">HOME</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="blog.html"><p id="nav-text">BLOG</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="team.html"><p id="nav-text">TEAM</p></a></li>
+              <li class="nav-item active"><a class="nav-link text-white" href="cars.html"><p id="nav-text">CARS</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="gallery.html"><p id="nav-text">GALLERY</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="sponsor.html"><p id="nav-text">SPONSORS</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#cont"><p id="nav-text">CONTACT US</p></a></li>
             </ul>
           </div>
         </nav>
@@ -136,23 +141,46 @@
       </div>
 
 
-      <div id="cont" class="container-fluid bg-dark text-white pl-2" >
+      <div id="cont" class="container-fluid  text-white pl-2" >
         <br><br>
-        <div class="row justify-content-md-center">
-          <div class="col-md-5 text-center">
+        <div class="row justify-content-md-center pl-3">
+          <div class="col-md-4 text-center">
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.882212748064!2d87.31425031505357!3d22.320293985313143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d441bd5dd36ff%3A0xe6a8debfe052c0aa!2sTeamKART+Bay!5e0!3m2!1sen!2sin!4v1528823406929" width="200" height="200" frameborder="0"  allowfullscreen></iframe>
+            <br> -->
+            Find Us on Google Maps &emsp;<a href="https://www.google.co.in/maps/place/TeamKART+Bay/@22.3202989,87.3142503,17z/data=!3m1!4b1!4m5!3m4!1s0x3a1d441bd5dd36ff:0xe6a8debfe052c0aa!8m2!3d22.320294!4d87.316439" target="_blank"><i id="sm" class="fa fa-map-marker" style="font-size:24px;color:white;"></i></a>
+            <hr style="color:white;">
+            TEAM KART<br>
+            Indian Institute of Technology<br>
+            Kharagpur - 721302
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="images/iit_logo2.png" width="150px" alt=""><br>
             <i id="sm" class="fa fa-facebook-square" style="font-size:24px;color:white;"></i>&emsp;
             <i id="sm" class="fa fa-instagram" style="font-size:24px;color:white;"></i>&emsp;
             <i id="sm" class="fa fa-twitter" style="font-size:24px;color:white;"></i>&emsp;
             <i id="sm" class="fa fa-youtube-play" style="font-size:24px;color:white;"></i>&emsp;<br><br>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.882212748064!2d87.31425031505357!3d22.320293985313143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d441bd5dd36ff%3A0xe6a8debfe052c0aa!2sTeamKART+Bay!5e0!3m2!1sen!2sin!4v1528823406929" width="300" height="300" frameborder="0" style="border-radius:150px;" allowfullscreen></iframe>
           </div>
-          <div class="col-md-1 text-center"><img src="images/iit_logo.png" width="150px" alt=""></div>
           <div class="col-md-4 ml-auto text-sm-center text-md-right pr-5">
             <div class="container">
-                <div class="center">
-                    <h2 >Contact Us</h2>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#query">Send us a Query</button>
                 </div>
-                <div class="">
+                </div>
+            </div><!--/.container-->
+          </div>
+        </div><!--/.cont-->
+
+        <div class="modal fade" id="query" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" > Contact Us</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
                     <div class="status alert alert-success" style="display: none"></div>
                     <form id="main-contact-form" class="contact-form " name="contact-form" method="post" action="sendemail.php">
                             <div class="form-group">
@@ -162,7 +190,7 @@
                                 <input type="email" name="email" class="form-control-sm" id="contin" required="required" placeholder="Email *">
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control-sm" id="contin" placeholder="Contact">
+                                <input type="number" name="phone" class="form-control-sm" id="contin" placeholder="Contact">
                             </div>
                             <div class="form-group">
                                 <textarea name="message" id="contin" required="required" class="form-control-sm" rows="5" placeholder="Your Message"></textarea>
@@ -172,13 +200,16 @@
                             </div>
                         </div>
                     </form>
-                </div><!--/.row-->
-            </div><!--/.container-->
+
+              </div>
+            </div>
           </div>
-        </div><!--/.cont-->
+        </div>
+
     <!-- Optional JavaScript -->
+    <script src="js/scroll.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   </body>

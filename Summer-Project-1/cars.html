@@ -12,13 +12,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 
     <title>Cars</title>
     <link rel="shortcut icon" href="images/k.ico"/>
     <style type="text/css">
-      .navbar-collapse{
+      .collapse{
        justify-content: flex-end;
+      }
+      .navbar-toggler {
+    background-color: red !important
+}
+      #nav-text:hover{
+        color: red;
+        transition: 1s ease;
       }
       .nav-link{
         margin-right: 1em !important;
@@ -48,6 +56,7 @@
         transition: .5s ease;
         backface-visibility: hidden;
         margin: 30px;
+        margin-left: 50px;
       }
       #middle {
         transition: .5s ease;
@@ -60,12 +69,12 @@
         text-align: center;
       }
       #c1:hover #im-tr {
-        opacity: 0.3;
+        opacity: 0.6;
       }
       #c1:hover #middle {
         opacity: 1;
       }
-      #text {
+      #text{
         background-color: red;
         color: white;
         font-size: 16px;
@@ -82,6 +91,7 @@
             border-color: black;
             background-color: black;
          }
+         .navbar{background: black;}
          #middle{
            left: 50%;
          }
@@ -92,6 +102,19 @@
       .d-block w-100{
         height: 400px;
       }
+      .modal-content{
+
+        overflow-y: auto;
+        }
+
+      @media (min-height: 500px) {
+        .modal-body { height: 400px; }
+
+        }
+
+      @media (min-height: 800px) {
+        .modal-body { height: 600px; }
+        }
     </style>
   </head>
   <body>
@@ -103,13 +126,13 @@
           </button>
           <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link text-white" href="index.html">HOME </a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="blog.html">BLOG</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="team.html">TEAM</a></li>
-              <li class="nav-item active"><a class="nav-link text-white" href="cars.html">CARS</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="gallery.html">GALLERY</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="sponsor.html">SPONSORS</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="#cont">CONTACT US</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="index.html"><p id="nav-text">HOME</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="blog.html"><p id="nav-text">BLOG</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="team.html"><p id="nav-text">TEAM</p></a></li>
+              <li class="nav-item active"><a class="nav-link text-white" href="cars.html"><p id="nav-text">CARS</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="gallery.html"><p id="nav-text">GALLERY</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="sponsor.html"><p id="nav-text">SPONSORS</p></a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#cont"><p id="nav-text">CONTACT US</p></a></li>
             </ul>
           </div>
         </nav>
@@ -140,44 +163,63 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div class="container-fluid text-center justify-content-center pl-16 text-white" id="content">
+      <div class="container-fluid text-center justify-content-center pl-5 text-white" id="content">
         <h3 id="car">CARS</h3>
-        <div class="row justify-content-md-center view overlay">
-          <div id="c1" class="col-md-3 justify-content-md-center">
-            <img id="im-tr" src="images/cars/k4c.jfif" width="250px" height="350px"  alt="">
+
+        <!-- <div class="row justify-content-md-center view overlay">
+          <div id="c1" class="col-md-4 justify-content-md-center">
+            <img id="im-tr" class="img-responsive" src="images/cars/k4.jpg" width="450px" alt="">
             <div id="middle">
-              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#KX1">K4</button>
+              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#K4">K4</button>
             </div>
           </div>
-          <div id="c1" class="col-md-3 justify-content-md-center">
+          <div id="c1" class="col-md-4 justify-content-md-center">
             <img id="im-tr" src="images/cars/k3c.jpg" width="250px" height="350px"  alt="">
             <div id="middle">
-              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#KX1">K3</button>
+              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#K3">K3</button>
             </div>
           </div>
-          <div id="c1" class="col-md-3 justify-content-md-center">
-            <img id="im-tr" src="images/cars/k2.2c.jpg" width="250px" height="350px" alt="">
+        </div> -->
+
+        <div class="row justify-content-md-center view overlay pl-5" >
+          <div id="c1" class="col-md-5 justify-content-md-center">
+            <img id="im-tr" class="img-responsive" src="images/cars/k4.jpg" width="370px" height="280px" alt="">
             <div id="middle">
-              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#KX1">K2.2</button>
+              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#K4">K4</button>
+            </div>
+          </div>
+          <div id="c1" class="col-md-5 ">
+            <img id="im-tr" class="img-responsive" src="images/cars/k2.jpg" width="370px" height="280px" alt="">
+            <div id="middle">
+              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#K3">K3</button>
             </div>
           </div>
         </div>
-        <br>
-        <div class="row justify-content-md-center view overlay">
-          <div id="c1" class="col-md-3 ">
-            <img id="im-tr" src="images/cars/k2c.jpg" width="250px" height="350px"  alt="">
+
+        <div class="row justify-content-md-center view overlay pl-5">
+          <div id="c1" class="col-md-5 justify-content-md-center ">
+            <img id="im-tr" class="img-responsive" src="images/cars/k2.2.jpg" width="370px" height="280px" alt="">
             <div id="middle">
-              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#KX1">K2</button>
+              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#K22">K2.2</button>
             </div>
           </div>
-          <div id="c1" class="col-md-3 ">
-            <img id="im-tr" src="images/cars/k1c.jpg" width="250px" height="350px"  alt="">
+          <div id="c1" class="col-md-5 ">
+            <img id="im-tr" class="img-responsive" src="images/cars/k2.jpg" width="370px" height="280px"  alt="">
             <div id="middle">
-              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#KX1">K1</button>
+              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#K2">K2</button>
             </div>
           </div>
-          <div id="c1" class="col-md-3 ">
-            <img id="im-tr" src="images/cars/kx1c.jpg" width="250px" height="350px"  alt="">
+        </div>
+
+          <div class="row justify-content-md-center view overlay pl-5">
+          <div id="c1" class="col-md-5 ">
+            <img id="im-tr" class="img-responsive" src="images/cars/k1.jpg"  width="370px" height="280px"alt="">
+            <div id="middle">
+              <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#K1">K1</button>
+            </div>
+          </div>
+          <div id="c1" class="col-md-5 ">
+            <img id="im-tr" class="img-responsive" src="images/cars/kx1.jpg" width="370px" height="280px" alt="">
             <div id="middle">
               <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#KX1">KX-1</button>
             </div>
@@ -186,51 +228,39 @@
       </div>
       <div id="cont" class="container-fluid  text-white pl-2" >
         <br><br>
-        <div class="row justify-content-md-center">
-          <div class="col-md-5 text-center">
+        <div class="row justify-content-md-center pl-3">
+          <div class="col-md-4 text-center">
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.882212748064!2d87.31425031505357!3d22.320293985313143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d441bd5dd36ff%3A0xe6a8debfe052c0aa!2sTeamKART+Bay!5e0!3m2!1sen!2sin!4v1528823406929" width="200" height="200" frameborder="0"  allowfullscreen></iframe>
+            <br> -->
+            Find Us on Google Maps &emsp;<a href="https://www.google.co.in/maps/place/TeamKART+Bay/@22.3202989,87.3142503,17z/data=!3m1!4b1!4m5!3m4!1s0x3a1d441bd5dd36ff:0xe6a8debfe052c0aa!8m2!3d22.320294!4d87.316439" target="_blank"><i id="sm" class="fa fa-map-marker" style="font-size:24px;color:white;"></i></a>
+            <hr style="color:white;">
+            TEAM KART<br>
+            Indian Institute of Technology<br>
+            Kharagpur - 721302
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="images/iit_logo2.png" width="150px" alt=""><br>
             <i id="sm" class="fa fa-facebook-square" style="font-size:24px;color:white;"></i>&emsp;
             <i id="sm" class="fa fa-instagram" style="font-size:24px;color:white;"></i>&emsp;
             <i id="sm" class="fa fa-twitter" style="font-size:24px;color:white;"></i>&emsp;
             <i id="sm" class="fa fa-youtube-play" style="font-size:24px;color:white;"></i>&emsp;<br><br>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.882212748064!2d87.31425031505357!3d22.320293985313143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d441bd5dd36ff%3A0xe6a8debfe052c0aa!2sTeamKART+Bay!5e0!3m2!1sen!2sin!4v1528823406929" width="300" height="300" frameborder="0"  allowfullscreen></iframe>
           </div>
-          <div class="col-md-1 text-center"><img src="images/iit_logo.png" width="150px" alt=""></div>
           <div class="col-md-4 ml-auto text-sm-center text-md-right pr-5">
             <div class="container">
-                <div class="center">
-                    <h2 >Contact Us</h2>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" id="text" data-toggle="modal" data-target="#query">Send us a Query</button>
                 </div>
-                <div class="">
-                    <div class="status alert alert-success" style="display: none"></div>
-                    <form id="main-contact-form" class="contact-form " name="contact-form" method="post" action="sendemail.php">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control-sm" id="contin" required="required" placeholder="Name *">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control-sm" id="contin" required="required" placeholder="Email *">
-                            </div>
-                            <div class="form-group">
-                                <input type="number" name="phone" class="form-control-sm" id="contin" placeholder="Contact">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" id="contin" required="required" class="form-control-sm" rows="5" placeholder="Your Message"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" name="submit" class="btn btn-primary btn-md" style="" required="required">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div><!--/.row-->
+                </div>
             </div><!--/.container-->
           </div>
         </div><!--/.cont-->
       </div>
-      <!-- Modal -->
-<div class="modal fade" id="KX1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <!-- Modals -->
+<div class="modal fade" id="K4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">The First Car - KX1 </h5>
+        <h5 class="modal-title" >The First Car - KX1 </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -244,9 +274,249 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="K3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >The First Car - KX1 </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <strong>Spec Sheet:</strong><br>
+        General<ul>
+        <li>Overall Length: 2980mm
+        <li>Curb weight: 226kgf
+        <li>Tyre Specifications: Avon A92 20X7.2-13
+        <li>Wheel Rim Diameter: 13"</ul>
+        Chassis<ul>
+        <li>Material: Tubular Seamless Carbon Steel
+        <li>Frame Weight: 35kgf
+        <li>Front Track: 137.0 cm
+        <li>Rear Track: 131.0 cm</ul>
+        Engine<ul>
+        <li>Engine Displacement: 373.2cc
+        <li>Engine Choice: KTM 390 DUKE,Single cylinder
+        <li>Engine Intake: Plenum made by rapid prot
+        <li>Maximum Torque: 33Nm @ 5500rpm
+        <li>Maximum Bhp : 33BHP @ 7000rpm
+        <li>Fuel: RON 95</ul>
+        Steering & Suspension<ul>
+        <li>Suspension Type: SLA Double Wishbone
+        <li>Wheelbase: 1720m
+        <li>Steering: Rack & Pinion type</ul>
+        Brakes<ul>
+        <li>Brake Type: Disc Brake
+        <li>Brake Details: Multi-Piston with brake biasing
+        <li>Caliper: Fixed Caliper Type</ul>
+        Transmission<ul>
+        <li>Clutch type Limited Slip Differential (Drexler).
+        <li>Chain and sprocket based final drive system designed</ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="K22" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >The K2.2</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <strong>Spec Sheet:</strong><br>
+        General<ul>
+        <li>Overall Length: 2730mm
+        <li>Curb weight: 270kgf
+        <li>Tyre Specifications: 167/77 R 13 36 Q
+        <li>Wheel Rim Diameter: 13"</ul>
+        Chassis<ul>
+        <li>Material: Tubular Seamless Carbon Steel
+        <li>Frame Weight: 45kgf
+        <li>Front Track: 107.3 cm
+        <li>Rear Track: 100.7 cm</ul>
+        Engine<ul>
+        <li>Engine Displacement: 599cc
+        <li>Engine Choice: Honda CBR600RR
+        <li>Engine Intake: Plenum made by rapid prototyping of volume: 1.2 litres
+        <li>Maximum Torque: 66Nm @ 9000rpm
+        <li>Maximum Bhp : 78.7W @ 13250rpm
+        <li>Fuel: RON 95</ul>
+        Steering & Suspension<ul>
+        <li>Suspension Type: SLA Double Wishbone
+        <li>Wheelbase: 1832m
+        <li>Steering: Rack & Pinion type</ul>
+        Brakes<ul>
+        <li>Brake Type: Disc Brake
+        <li>Brake Details: Multi-Piston with brake biasing
+        <li>Caliper: Fixed Caliper Type</ul>
+        Transmission<ul>
+        <li>Honda Civic Quaife type Differential
+        <li>Torque biasing Limited slip differential with custom built housing
+        <li>Chain and sprocket based final drive system designed</ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="K2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >The First Car - KX1 </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <strong>Spec Sheet:</strong><br>
+        General
+        Overall Length: 2730mm
+        Curb weight: 280kgf
+        Tyre Specifications: 167/77 R 13 36 Q
+        Wheel Rim Diameter: 13"
+        Chassis
+        Material: Tubular Seamless Carbon Steel
+        Frame Weight: 45kgf
+        Front Track: 107.3 cm
+        Rear Track: 100.7 cm
+        Engine
+        Engine Displacement: 599cc
+        Engine Choice: Honda CBR600RR
+        Engine Intake: Plenum made by rapid prototyping of volume: 1.2 litres
+        Maximum Torque: 66Nm @ 9000rpm
+        Maximum Bhp : 78.7W @ 13250rpm
+        Fuel: RON 95
+        Steering & Suspension
+        Suspension Type: SLA Double Wishbone
+        Wheelbase: 1832m
+        Steering: Rack & Pinion type
+        Brakes
+        Brake Type: Disc Brake
+        Brake Details: Multi-Piston with brake biasing
+        Caliper: Fixed Caliper Type
+        Transmission
+        Honda Civic Quaife type Differential
+        Torque biasing Limited slip differential with custom built housing
+        Chain and sprocket based final drive system designed
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="K1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >K1 </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-md-6">
+        <strong>Spec Sheet:</strong><br>
+        General<ul>
+        <li>Overall Length: 2400mm
+        <li>Curb weight: 333kgf
+        <li>Tyre Specifications: 167/77 R 13 36 Q
+        <li>Wheel Rim Diameter: 13"</ul>
+
+        Chassis<ul>
+        <li>Material: Tubular Seamless Carbon Steel
+          <li>Rear Track: 118 cm
+        <li>Frame Weight: 45kgf
+        <li>Front Track: 125 cm</ul>
+        Engine<ul>
+        <li>Engine Displacement: 599cc
+        <li>Engine Choice: Honda CBR 600RR
+        <li>Maximum Torque: 66Nm @ 9000rpm
+        <li>Fuel: RON 95</ul>
+        Steering & Suspension<ul>
+        <li>Suspension Type: SLA Double Wishbone
+        <li>Wheelbase: 1832mm
+        <li>Steering: Rack & Pinion type</ul>
+        Brakes<ul>
+        <li>Brake Type: Disc Brake
+        <li>Brake Details: Multi-Piston with brake biasing
+        <li>Caliper: Fixed Caliper Type</ul>
+        </div>
+        <div class="col-md-6 ">
+          <img src="images/Blog/b1-cover.PNG" alt="..." style="width:300px;">
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="query" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" > Contact Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+            <div class="status alert alert-success" style="display: none"></div>
+            <form id="main-contact-form" class="contact-form " name="contact-form" method="post" action="sendemail.php">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control-sm" id="contin" required="required" placeholder="Name *">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control-sm" id="contin" required="required" placeholder="Email *">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="phone" class="form-control-sm" id="contin" placeholder="Contact">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="contin" required="required" class="form-control-sm" rows="5" placeholder="Your Message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="submit" class="btn btn-primary btn-md" style="" required="required">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="KX1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >The First Car - KX1 </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Spec Sheet:
+      </div>
+    </div>
+  </div>
+</div>
     <!-- Optional JavaScript -->
+      <!-- <script src="js/cars.js"></script> -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="js/main.js"></script>
+  <script src="js/scroll.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   </body>
